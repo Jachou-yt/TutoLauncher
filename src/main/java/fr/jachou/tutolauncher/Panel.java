@@ -41,9 +41,9 @@ public class Panel extends JPanel implements SwingerEventListener {
     @Override
     public void onEvent(SwingerEvent swingerEvent) {
         if (swingerEvent.getSource() == microsoft) {
-            Thread t = new Thread(new MicrosoftThread());
-            t.start();
+            Launcher.crack();
         } else if (swingerEvent.getSource() == play) {
+
             try {
                 Launcher.update();
             } catch (Exception e) {

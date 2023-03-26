@@ -2,6 +2,7 @@ package fr.jachou.tutolauncher;
 
 import fr.flowarg.flowupdater.FlowUpdater;
 import fr.flowarg.flowupdater.download.json.CurseFileInfo;
+import fr.flowarg.flowupdater.utils.ModFileDeleter;
 import fr.flowarg.flowupdater.utils.UpdaterOptions;
 import fr.flowarg.flowupdater.versions.AbstractForgeVersion;
 import fr.flowarg.flowupdater.versions.ForgeVersionBuilder;
@@ -31,14 +32,15 @@ public class Launcher {
         authInfos = new AuthInfos(result.getProfile().getName(), result.getAccessToken(), result.getProfile().getId());
     }
 
+    public static void crack() {
+        authInfos = new AuthInfos("Jachou", "5655121548", "dezybfzuyfbezuyfbu");
+    }
+
     public static void update() throws Exception {
         VanillaVersion vanillaVersion = new VanillaVersion.VanillaVersionBuilder().withName("1.16.5").build();
         UpdaterOptions options = new UpdaterOptions.UpdaterOptionsBuilder().build();
 
-        List<CurseFileInfo> curseFileInfos = new ArrayList<>();
-        curseFileInfos.add(new CurseFileInfo(238222, 4354617));
-
-        AbstractForgeVersion version = new ForgeVersionBuilder(ForgeVersionBuilder.ForgeVersionType.NEW).withCurseMods(curseFileInfos).withForgeVersion("36.2.39").build();
+        AbstractForgeVersion version = new ForgeVersionBuilder(ForgeVersionBuilder.ForgeVersionType.NEW).withMods("https://chiss.fr/files/ytb/updater/exemple2/mods.php").withFileDeleter(new ModFileDeleter(true)).withForgeVersion("36.2.39").build();
 
         FlowUpdater updater = new FlowUpdater.FlowUpdaterBuilder().withVanillaVersion(vanillaVersion).withUpdaterOptions(options).withModLoaderVersion(version).build();
         updater.update(path);
