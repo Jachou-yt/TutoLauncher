@@ -1,5 +1,8 @@
 package fr.jachou.tutolauncher;
 
+import club.minnced.discord.rpc.DiscordEventHandlers;
+import club.minnced.discord.rpc.DiscordRPC;
+import club.minnced.discord.rpc.DiscordRichPresence;
 import fr.theshark34.openlauncherlib.util.Saver;
 import fr.theshark34.swinger.util.WindowMover;
 
@@ -46,6 +49,21 @@ public class Frame extends JFrame {
         }
 
         instance = new Frame();
+
+        launchRPC();
+    }
+
+    public static void launchRPC() {
+        final DiscordRPC lib = DiscordRPC.INSTANCE;
+        final String appID = "1110990670035963994";
+        final DiscordEventHandlers handlers = new DiscordEventHandlers();
+        lib.Discord_Initialize(appID, handlers, true, "");
+        DiscordRichPresence discordRichPresence = new DiscordRichPresence();
+        discordRichPresence.startTimestamp = System.currentTimeMillis() / 1000;
+        discordRichPresence.details = "Playing Tutolauncher";
+        discordRichPresence.state = "Jachou";
+
+        lib.Discord_UpdatePresence(discordRichPresence);
     }
 
 
