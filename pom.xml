@@ -53,6 +53,19 @@
             <artifactId>java-discord-rpc</artifactId>
             <version>2.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.azuriom</groupId>
+            <artifactId>azauth</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>fr.theshark34</groupId>
+            <artifactId>swinger</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Users/matis/Downloads/swinger-1.0.0-BETA.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <repositories>

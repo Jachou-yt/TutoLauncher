@@ -3,7 +3,9 @@ package fr.jachou.tutolauncher;
 import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordRPC;
 import club.minnced.discord.rpc.DiscordRichPresence;
+import fr.jachou.tutolauncher.utils.Animation;
 import fr.theshark34.openlauncherlib.util.Saver;
+import fr.theshark34.swinger.animation.Animator;
 import fr.theshark34.swinger.util.WindowMover;
 
 import javax.imageio.ImageIO;
@@ -35,6 +37,8 @@ public class Frame extends JFrame {
         WindowMover mover = new WindowMover(this);
         this.addMouseListener(mover);
         this.addMouseMotionListener(mover);
+
+        Animation.fadeInFrame(this, 30);
 
         this.setVisible(true);
     }
