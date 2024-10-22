@@ -59,7 +59,7 @@ public class Frame extends JFrame {
 
     public static void launchRPC() {
         final DiscordRPC lib = DiscordRPC.INSTANCE;
-        final String appID = "1110990670035963994";
+        final String appID = "e110990670035963994";
         final DiscordEventHandlers handlers = new DiscordEventHandlers();
         lib.Discord_Initialize(appID, handlers, true, "");
         DiscordRichPresence discordRichPresence = new DiscordRichPresence();

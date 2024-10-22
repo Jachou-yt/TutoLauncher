@@ -7,8 +7,6 @@ import fr.flowarg.flowupdater.download.json.CurseFileInfo;
 import fr.flowarg.flowupdater.download.json.MCP;
 import fr.flowarg.flowupdater.utils.ModFileDeleter;
 import fr.flowarg.flowupdater.utils.UpdaterOptions;
-import fr.flowarg.flowupdater.versions.AbstractForgeVersion;
-import fr.flowarg.flowupdater.versions.ForgeVersionBuilder;
 import fr.flowarg.flowupdater.versions.VanillaVersion;
 import fr.flowarg.openlauncherlib.NoFramework;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
@@ -37,7 +35,7 @@ public class Launcher {
     private static AuthInfos authInfos;
 
 
-    /*public static void auth() throws MicrosoftAuthenticationException {
+    public static void auth() throws MicrosoftAuthenticationException {
         MicrosoftAuthenticator microsoftAuthenticator = new MicrosoftAuthenticator();
         final String refresh_token = Frame.getSaver().get("refresh_token");
         MicrosoftAuthResult result = null;
@@ -49,9 +47,9 @@ public class Launcher {
             Frame.getSaver().set("refresh_token", result.getRefreshToken());
             authInfos = new AuthInfos(result.getProfile().getName(), result.getAccessToken(), result.getProfile().getId());
         }
-    }*/
+    }
 
-    public static void auth(String username, String password) throws AuthException {
+    /*public static void auth(String username, String password) throws AuthException {
         AuthClient authenticator = new AuthClient("https://youtube.frouzie.fr");
 
         authInfos = authenticator.login(username, password, () -> {
@@ -68,7 +66,7 @@ public class Launcher {
 
             return code;
         }, AuthInfos.class);
-    }
+    }*/
 
     public static void crack() {
         authInfos = new AuthInfos("Jachou", "5655121548", "dezybfzuyfbezuyfbu");

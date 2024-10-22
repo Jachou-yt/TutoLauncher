@@ -18,12 +18,12 @@
         <dependency>
             <groupId>fr.flowarg</groupId>
             <artifactId>openlauncherlib</artifactId>
-            <version>3.2.5</version>
+            <version>3.2.10</version>
         </dependency>
         <dependency>
             <groupId>fr.flowarg</groupId>
             <artifactId>flowupdater</artifactId>
-            <version>1.7.2</version>
+            <version>1.9.2</version>
         </dependency>
         <dependency>
             <groupId>fr.litarvan</groupId>
@@ -64,7 +64,7 @@
             <artifactId>swinger</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>C:/Users/matis/Downloads/swinger-1.0.0-BETA.jar</systemPath>
+            <systemPath>C:/Users/matis/Downloads/swinger.jar</systemPath>
         </dependency>
     </dependencies>
 

@@ -57,14 +57,7 @@ public class Panel extends JPanel implements SwingerEventListener {
     @Override
     public void onEvent(SwingerEvent swingerEvent) {
         if (swingerEvent.getSource() == microsoft) {
-            String username = JOptionPane.showInputDialog("Entrez votre adresse mail Azuriom :");
-            String password = JOptionPane.showInputDialog("Entrez votre mot de passe Azuriom :");
-
-            try {
-                Launcher.auth(username, password);
-            } catch (AuthException e) {
-                Launcher.getReporter().catchError(e, "Impossible de s'authentifier.");
-            }
+            new Thread(new MicrosoftThread()).start();
 
             JOptionPane.showMessageDialog(null, "Authentification réussie avec le compte "+ Launcher.getAuthInfos().getUsername() +" !", "Succès", JOptionPane.INFORMATION_MESSAGE);
 
