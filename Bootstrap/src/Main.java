@@ -41,7 +41,7 @@ public class Main {
     }
 
     public static void doUpdate() throws Exception {
-        FlowUpdater flowUpdater = new FlowUpdater.FlowUpdaterBuilder().withExternalFiles(ExternalFile.getExternalFilesFromJson("https://github.com/Jachou-yt/TutoLauncher/launcher_update/launcher.json")).build();
+        FlowUpdater flowUpdater = new FlowUpdater.FlowUpdaterBuilder().withExternalFiles(ExternalFile.getExternalFilesFromJson("https://raw.githubusercontent.com/Jachou-yt/TutoLauncher/refs/heads/master/launcher_update/launcher.json")).build();
         flowUpdater.update(path);
     }
 

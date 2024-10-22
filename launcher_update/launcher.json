@@ -2,7 +2,7 @@
   "extfiles": [
     {
       "path": "TutoLauncher.jar",
-      "downloadURL": "/TutoLauncher.jar",
+      "downloadURL": "https://github.com/Jachou-yt/TutoLauncher/raw/refs/heads/master/launcher_update/TutoLauncher.jar",
       "sha1": "e7d93c70bfb3356e3237223bd998e6c486e757d8",
       "size": 43749680
     }
