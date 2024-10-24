@@ -21,11 +21,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class Main {
-    private static GameInfos gameInfos = new GameInfos("tutolauncher", new GameVersion("1.16.5", GameType.V1_13_HIGHER_VANILLA), new GameTweak[]{});
-    private static Path path = gameInfos.getGameDir();
+    private static final GameInfos gameInfos = new GameInfos("tutolauncher", new GameVersion("1.16.5", GameType.V1_13_HIGHER_VANILLA), new GameTweak[]{});
+    private static final Path path = gameInfos.getGameDir();
     public static File crashFile = new File(String.valueOf(path), "crashes");
     public static File launcherFile = new File(String.valueOf(path), "launchers");
-    private static CrashReporter reporter = new CrashReporter(String.valueOf(crashFile), path);
+    private static final CrashReporter reporter = new CrashReporter(String.valueOf(crashFile), path);
 
     public static void main(String[] args) throws Exception {
         crashFile.mkdirs();

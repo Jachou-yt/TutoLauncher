@@ -15,14 +15,15 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
 
 public class Frame extends JFrame {
 
     private static Frame instance;
-    private Panel panel;
-    private static File ramFile = new File(String.valueOf(Launcher.getPath()), "ram.txt");
-    private static File saverFile = new File(String.valueOf(Launcher.getPath()), "user.stock");
-    private static Saver saver = new Saver(saverFile);
+    private final Panel panel;
+    private static final File ramFile = new File(String.valueOf(Launcher.getPath()), "ram.txt");
+    private static final File saverFile = new File(String.valueOf(Launcher.getPath()), "user.stock");
+    private static final Saver saver = new Saver(saverFile);
 
     public Frame() throws IOException {
         instance = this;
@@ -81,6 +82,7 @@ public class Frame extends JFrame {
         InputStream inputStream = Frame.getInstance().getClass().getClassLoader().getResourceAsStream(fichier);
         return ImageIO.read(inputStream);
     }
+
 
     public static Frame getInstance() {
         return instance;
