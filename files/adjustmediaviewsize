@@ -1,0 +1,5 @@
+private void adjustMediaViewSize(JFXPanel fxPanel) {
+        MediaView mediaView = (MediaView) ((javafx.scene.Group) fxPanel.getScene().getRoot()).getChildren().get(0);
+        mediaView.setFitWidth(fxPanel.getWidth());
+        mediaView.setFitHeight(fxPanel.getHeight());
+    }

@@ -1,0 +1,36 @@
+private void initFX(JFXPanel fxPanel) {
+        // mettre le chemin absolu de la vidéo.
+        String videoPath = Paths.get("src/main/resources/test.mp4").toUri().toString();
+
+        // Charge la vidéo.
+        Media media = new Media(videoPath);
+        mediaPlayer = new MediaPlayer(media);
+
+        mediaPlayer.setOnError(() -> {
+            System.out.println("Erreur de lecture de la vidéo : " + mediaPlayer.getError().getMessage());
+        });
+
+        mediaPlayer.setOnReady(() -> {
+            System.out.println("Vidéo prête à être lue.");
+            mediaPlayer.play();  // Démarre la vidéo quand elle est prête
+        });
+
+        mediaPlayer = new MediaPlayer(media);
+        MediaView mediaView = new MediaView(mediaPlayer);
+
+        // Ajustement de la taille de la MediaView.
+        mediaView.setFitWidth(fxPanel.getWidth());
+        mediaView.setFitHeight(fxPanel.getHeight());
+        mediaView.setPreserveRatio(false);
+
+        // Création de la scène JavaFX avec la vidéo en arrière-plan.
+        Scene scene = new Scene(new javafx.scene.Group(mediaView));
+        scene.setFill(javafx.scene.paint.Color.BLACK);  // Ajoute un fond noir
+        fxPanel.setScene(scene);
+
+
+        // Lecture en boucle de la vidéo.
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // fais une lecture en boucle de la vidéo.
+        mediaPlayer.setVolume(0);
+        mediaPlayer.play(); // lance la vidéo.
+    }
